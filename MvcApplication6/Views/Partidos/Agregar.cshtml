@@ -1,0 +1,44 @@
+﻿@model MvcApplication6.Models.partido             
+@{
+    ViewBag.Title = "Agregar Partido";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<h1>Agregar Nuevo Partido</h1>
+<br/>
+@using (Html.BeginForm()) {
+<div>
+    <fieldset>
+    @{
+        var listafechas = (IEnumerable<MvcApplication6.Models.fechamodels>) ViewData["listafechas"];
+        var listaequiposloc = (IEnumerable<MvcApplication6.Models.equipomodels>) ViewData["listaequipos"];
+    }
+    <div class="editor-label">
+        @Html.Label("Fecha del Partido")
+    </div>
+        @Html.DropDownListFor( m => m.idfechatorneo, new SelectList(listafechas, "id", "nombre"))
+    <div class="editor-label">
+        @Html.Label("Equipo Local")
+    </div>
+    @Html.DropDownListFor( m => m.equipolocal, new SelectList(listaequiposloc, "id", "nombre"))  
+    <div class="editor-label">
+        @Html.Label("Equipo Visitante")
+    </div>
+    @Html.DropDownListFor(m => m.equipovisita, new SelectList(listaequiposloc, "id", "nombre"))            
+    <div class="editor-label">
+        @Html.LabelFor(m => m.estadio)
+    </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(m => m.estadio)
+        @Html.ValidationMessageFor(m => m.estadio)
+    </div>
+    </fieldset>
+    <div class="submit">
+        <input type="submit" value="Agregar Partido" />
+        <input type="reset" value="Reset" />
+    </div>
+</div>
+}
+@Html.ActionLink("Cancelar", "Index", "Partidos")

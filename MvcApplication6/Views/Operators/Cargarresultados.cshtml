@@ -1,0 +1,36 @@
+﻿@model MvcApplication6.Models.partidomodels
+@{
+    ViewBag.Title = "Editar Partido";
+}
+<h2>@TempData["MENSAJE"]</h2>
+<h2>@TempData["ERROR"]</h2>
+@{  var listapartidos     = (IEnumerable<MvcApplication6.Models.partidomodels>) ViewData["lpartidos"];
+}
+
+
+<table id="tabla1">
+	<tr>
+	    <th>Id</th><th>Fecha</th><th>equipo local</th><th>Equipo visitante</th><th>Goles Local</th><th>Goles Visitante</th><th>Estadio</th>
+	</tr>	
+	
+	@foreach (var aux in listapartidos)
+	{
+        <!--  ============================== begin form in tr  ====================================================== -->
+        using (Html.BeginForm())
+        { <tr>
+            <td>@Html.TextBoxFor(m => m.id              , new { Value = aux.id              , Readonly = "readonly" , Style = "width:60px;"  }) </td>
+            <td>@Html.TextBoxFor(m => m.idfechatorneo   , new { Value = aux.idfechatorneo   , Readonly = "readonly" ,Style = "width:60px;"    }) </td>   
+            <td>@Html.TextBoxFor(m => m.equipolocal     , new { Value = aux.equipolocal     , Readonly = "readonly" , Style = "width:60px;"  }) </td>
+            <td>@Html.TextBoxFor(m => m.equipovisita    , new { Value = aux.equipovisita    , Readonly = "readonly" , Style = "width:60px;"  }) </td>            
+            <td>@Html.TextBoxFor(m => m.goleslocal      , new { Value = aux.goleslocal, Style = "width:60px;" })  </td>        
+            <td>@Html.TextBoxFor(m => m.golesvisita     , new { Value = aux.golesvisita, Style = "width:60px;" }) </td>        
+            <td>@Html.TextBoxFor(m => m.estadio         , new { Value = aux.estadio         , Readonly = "readonly" , Style = "width:300px;" }) </td>        
+            <td> <input type="submit" value="Guardar Resultado" /></td>
+          </tr>
+        }
+        <!--  ============================== end   form in tr  ====================================================== -->
+    }
+</table>
+
+	@Html.ActionLink("Partidos", "Index")
+	@Html.ActionLink("Home"	    , "Index"	, "Home")

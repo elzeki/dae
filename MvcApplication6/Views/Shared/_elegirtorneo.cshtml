@@ -1,0 +1,27 @@
+﻿@model MvcApplication6.Models.torneomodels
+@{
+    ViewBag.Title = "Seleccionartorneo";
+}
+
+@using (Html.BeginForm())
+{
+<fieldset>
+            <legend>Seleccionar Torneo</legend>
+
+            @{ var aux1 = (IEnumerable<MvcApplication6.Models.torneomodels>)ViewData["listatorneos"]; }
+
+             <div class="editor-label">
+                @Html.LabelFor(m => m.id)
+            </div>
+            @Html.DropDownListFor(
+                        m => m.id,
+                        new SelectList(aux1, "id", "nombre")
+                    )          
+
+
+
+            <p>
+                <input type="submit" value="Seleccionar Torneo" />
+            </p>
+</fieldset>
+}

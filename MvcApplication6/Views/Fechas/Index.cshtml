@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Fechas";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<div><h3>Fechas</h3></div>
+Agregar Fecha
+<a href="@Url.Action("Agregar", "Fechas")">
+    <img src="../../Content/images/img/add.png" alt="Agregar Fecha" class="imageHome" title="Agregar Nueva Fecha" />
+</a>
+
+<div>
+<table cellpadding="0" cellspacing="0">
+    <tr> 
+        <th>Id</th> 
+        <th>Torneo</th>
+        <th>Nombre</th>
+        <th>Fecha</th>
+        <th>Opciones</th> </tr>	
+	@foreach (var aux in Model) {	
+     <tr>
+        <td>@aux.id</td>
+        <td>@Html.ActionLink( Convert.ToString((string)@aux.hiddentorneo), "ver", "Torneos", new{id=@aux.idtorneo},null)</td>  
+		<td>@aux.nombre</td>
+        <td>@aux.fecha1</td>
+        <td align="center">
+        <a href="@Url.Action("Ver", "Fechas", new { id = @aux.id })" title="Ver Fecha">
+            <img src="../../Content/images/img/view.png" alt="Ver Fecha" class="imageHome" /></a>
+        <a href="@Url.Action("Editar", "Fechas", new { id = @aux.id })" title="Editar Fecha">
+            <img src="../../Content/images/img/edit.png" alt="Editar Fecha" class="imageHome" /></a>
+        <a href="@Url.Action("Eliminar", "Fechas", new { id = @aux.id })" class="delete" title="Eliminar Fecha">
+            <img src="../../Content/images/img/delete.png" alt="Eliminar Fecha" class="imageHome" /></a>
+        </td>
+	</tr>
+    }
+</table>
+</div>
+<br/><br/>
+<a href="@Url.Action("Home", "Admin")"> Volver al ADMINISTRADOR </a>
+
+<script type="text/javascript">
+    $('.delete').click(function () {
+        if (confirm('Está seguro que desea eliminar esta fecha?')) {
+            var $link = $(this);
+            $.ajax({
+                url: this.href,
+                type: 'DELETE',
+                success: function (result) {
+                    $link.parent().parent().remove();
+                }
+            });
+        }
+        return false;
+    });
+</script>
