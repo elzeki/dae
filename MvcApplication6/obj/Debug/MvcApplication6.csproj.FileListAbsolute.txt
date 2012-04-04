@@ -5,24 +5,3 @@ D:\dae final\MvcApplication6\MvcApplication6\bin\EntityFramework.xml
 D:\dae final\MvcApplication6\MvcApplication6\obj\Debug\ResolveAssemblyReference.cache
 D:\dae final\MvcApplication6\MvcApplication6\obj\Debug\MvcApplication6.dll
 D:\dae final\MvcApplication6\MvcApplication6\obj\Debug\MvcApplication6.pdb
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\bin\MvcApplication6.dll
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\bin\MvcApplication6.pdb
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\bin\EntityFramework.dll
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\bin\EntityFramework.xml
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\obj\Debug\MvcApplication6.dll
-C:\Users\silchu\Desktop\MvcApplication6\MvcApplication6\obj\Debug\MvcApplication6.pdb
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\bin\MvcApplication6.dll
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\bin\MvcApplication6.pdb
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\bin\EntityFramework.dll
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\bin\EntityFramework.xml
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\obj\Debug\MvcApplication6.dll
-C:\Users\silchu\Documents\Visual Studio 2010\Projects\MvcApplication6\MvcApplication6\obj\Debug\MvcApplication6.pdb
-D:\daefinal\dae\MvcApplication6\obj\Debug\ResolveAssemblyReference.cache
-D:\daefinal\dae\MvcApplication6\obj\Debug\MvcApplication6.dll
-D:\daefinal\dae\MvcApplication6\bin\MvcApplication6.dll
-D:\daefinal\dae\MvcApplication6\bin\MvcApplication6.pdb
-D:\daefinal\dae\MvcApplication6\bin\EntityFramework.dll
-D:\daefinal\dae\MvcApplication6\bin\EntityFramework.xml
-D:\daefinal\dae\MvcApplication6\obj\Debug\MvcApplication6.pdb

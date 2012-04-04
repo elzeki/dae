@@ -46,6 +46,7 @@ namespace MvcApplication6.Controllers
                     TempData["ERROR"] = "No se pudo agregar el equipo, por favor intente nuevamente.";
                     return View();
                 }
+               // HttpRuntime.Cache.Remove("EQUIPOS"); 
                 TempData["MENSAJE"] = "Se agrego correctamente el equipo.";
                 return RedirectToAction("Index");
             }
@@ -85,18 +86,19 @@ namespace MvcApplication6.Controllers
             {
                 if (this.SaveEquipo(model))
                 {
-                    TempData["MENSAJE"] = "Se edito correctamente el equipo.";
+                    HttpRuntime.Cache.Remove("EQUIPOS"); 
+                    TempData["MENSAJE"] = "Se edito correctamente el torneo.";
                     return RedirectToAction("Index");
                 }
                 else
                 {
-                    TempData["ERROR"] = "No se pudo editar el equipo, por favor intente nuevamente.";
+                    TempData["ERROR"] = "No se pudo editar el Equipo, por favor intente nuevamente.";
                     return View();
                 }
             }
             catch
             {
-                TempData["ERROR"] = "No se pudo editar el equipo, por favor intente nuevamente.";
+                TempData["ERROR"] = "No se pudo editar el Equipo, por favor intente nuevamente.";
                 return View();
             }
         }
@@ -139,15 +141,22 @@ namespace MvcApplication6.Controllers
                 db.equipos.Attach(T);
                 db.equipos.DeleteOnSubmit(T);
                 db.SubmitChanges();
-                TempData["MENSAJE"] = "Se elimino correctamente el equipo.";
+                TempData["MENSAJE"] = "Se elimino correctamente el El equipo.";
             }
-            catch {
-                TempData["MENSAJE"] = "EL equipo no ha podido eliminarse.";
+            catch
+            {
+                TempData["ERROR"] = "No se pudo eliminar el Equipo, por favor intente nuevamente.";
             }
             return RedirectToAction("Index");
         }
         /* --------------------------------------------------------------------------------------  */
-       
+        /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
 
     }
 }

@@ -63,12 +63,12 @@
                 @if (Session.Count != 0)
                 {
                     <text>Welcome <strong>@Session["username"]</strong>!</text>                     
-                    <li class='sep'>|</li>
-                    <li>[ @Html.ActionLink("Log Off", "LogOff", "Account") ]</li>                     
+                    <div class='sep'>|</div>
+                    <div>[ @Html.ActionLink("Log Off", "LogOff", "Account") ]</div>                     
                 }
                 else
                 { 
-                    <li>Bienvenido Visitante</li>
+                    <div>Bienvenido Visitante</div>
                 }
 		    </li>
 			<li class="sep">|</li>

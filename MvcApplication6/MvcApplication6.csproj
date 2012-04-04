@@ -67,7 +67,6 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\DebugInfoAttribute.cs" />
     <Compile Include="Controllers\EquiposController.cs" />
     <Compile Include="Controllers\FechasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />

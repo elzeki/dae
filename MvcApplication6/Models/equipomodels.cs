@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Caching;
 
 namespace MvcApplication6.Models
 {
@@ -19,15 +20,24 @@ namespace MvcApplication6.Models
      /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<equipomodels> listaequipos()
         {
-            IEnumerable<equipomodels> lequipos =
-            (from aux in db.equipos
-             orderby aux.nombre
-             select new equipomodels
-             {
-                 id     = aux.id,
-                 nombre = aux.nombre
-             });
-           return (lequipos);
+            IEnumerable<equipomodels> lequipos;
+            if (HttpRuntime.Cache["EQUIPOS"] == null)
+            {
+                lequipos =
+                (from aux in db.equipos
+                 orderby aux.nombre
+                 select new equipomodels
+                 {
+                     id = aux.id,
+                     nombre = aux.nombre
+                 });
+                HttpRuntime.Cache.Add("EQUIPOS", lequipos, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
+        
+            }
+            else {
+                lequipos = (IEnumerable<MvcApplication6.Models.equipomodels>)HttpRuntime.Cache.Get("EQUIPOS");  
+            }   
+            return (lequipos);
         }
         /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<equipomodels> verequipo(int id)
