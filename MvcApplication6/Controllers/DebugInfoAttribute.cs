@@ -18,7 +18,8 @@ namespace MvcApplication6.Controllers
             usuariomodels u = new usuariomodels();
 
             SessionStateTempDataProvider s = new SessionStateTempDataProvider();
-            String y = s.SaveTempData(controllerContext, ["Rol", "usuario]");
+            //String y = s.SaveTempData(controllerContext, ["Rol", "usuario]");
+            ghddfhgdj
             
         }
 
