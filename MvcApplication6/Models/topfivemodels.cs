@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Caching;
 
 namespace MvcApplication6.Models
 {
@@ -13,27 +12,8 @@ namespace MvcApplication6.Models
         int     puntosporfecha{ get; set; }
 
         PRODEDataContext db = new PRODEDataContext();
+
         /* ---------------------------------------------------------------------*/
-        public IEnumerable<topfivemodels> Vertopfive()
-        { IEnumerable<topfivemodels> ltopfives;
-        if (HttpRuntime.Cache["TOPFIVES"] == null)
-        {
-            ltopfives =
-            (from auxt in db.topfives
-             select new topfivemodels
-             {
-                 id = auxt.id,
-                 idusuario = auxt.idusuario,
-                 puntosporfecha = auxt.puntosporfecha,
-             });
-            HttpRuntime.Cache.Add("TOPFIVES", ltopfives, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
-        
-        }
-        else {
-            ltopfives = (IEnumerable<MvcApplication6.Models.topfivemodels>)HttpRuntime.Cache.Get("TOPFIVES");
-        }
-        return (ltopfives);
-        }
         /* ---------------------------------------------------------------------*/
         public void insertarpuntos( IEnumerable<boletamodels> lboletas )
         {
@@ -45,6 +25,23 @@ namespace MvcApplication6.Models
                 db.topfives.InsertOnSubmit(P);
                 db.SubmitChanges();
             }
+        
+            
+            
+            
+            /* var lboletas = new boletamodels().boletaporfechaportorneoporuser(idf, iduser);
+            var total = 0;
+            foreach (var aux in lboletas)
+            {
+                total=total + aux.puntostotales; 
+            }
+
+            topfive P = new topfive();
+            P.idusuario = iduser;
+            P.puntosporfecha = total;
+            db.topfives.InsertOnSubmit(P);
+            db.SubmitChanges();
+             * */
         }
         /* ---------------------------------------------------------------------*/
         public void eliminartabla()

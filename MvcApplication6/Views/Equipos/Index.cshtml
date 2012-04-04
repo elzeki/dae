@@ -3,7 +3,8 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 <h2>@TempData["ERROR"]</h2>
-<h2>@TempData["MENSAJE"]</h2>
+<h4>@TempData["MENSAJE"]</h4>
+
 <div><h3>Equipos</h3></div>
 Agregar Equipo
 <a href="@Url.Action("Agregar", "Equipos")"><img src="../../Content/images/img/add.png" 
@@ -33,14 +34,19 @@ Agregar Equipo
 
 <script type="text/javascript">
     $('.delete').click(function () {
-        if (confirm('Está seguro que desea eliminar este equipo?')) {
+        if (confirm('Está seguro que desea eliminar esta fecha?')) {
             var $link = $(this);
             $.ajax({
                 url: this.href,
                 type: 'DELETE',
                 success: function (result) {
                     $link.parent().parent().remove();
-                }
+                    $("h4").html("El equipo se ha eliminado correctamente.");
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                } 
             });
         }
         return false;

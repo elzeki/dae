@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Caching;
 
 namespace MvcApplication6.Models
 {   
@@ -31,6 +30,18 @@ namespace MvcApplication6.Models
              { puntostotales=auxb.puntostotales
              }
              );
+           
+
+
+          /*  IEnumerable<boletamodels> lboletas =
+        (from auxb in db.boletas
+         join auxu in db.usuarios on auxb.idusuario equals auxu.id
+         
+         select new boletamodels
+         { puntostotales=auxb.puntostotales
+         }
+         );
+         */
 
             foreach (var aux in lboletas)
             {
@@ -41,24 +52,15 @@ namespace MvcApplication6.Models
         /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<torneomodels> listatorneos()
         {
-             IEnumerable<torneomodels> ltorneos;
-             if (HttpRuntime.Cache["TORNEOS"] == null)
+            IEnumerable<torneomodels> ltorneo =
+            (from aux in db.torneos
+             orderby aux.nombre
+             select new torneomodels
              {
-                ltorneos =
-                (from aux in db.torneos
-                orderby aux.nombre
-                select new torneomodels
-                {
-                    id = aux.id,
-                    nombre = aux.nombre
-                });
-                HttpRuntime.Cache.Add("TORNEOS", ltorneos, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
-        
-             }
-             else {
-                 ltorneos = (IEnumerable<MvcApplication6.Models.torneomodels>)HttpRuntime.Cache.Get("TORNEOS");
-             }
-           return (ltorneos);
+                 id = aux.id,
+                 nombre = aux.nombre
+             });
+           return (ltorneo);
         }
         /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<torneomodels> vertorneo(int id)

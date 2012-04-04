@@ -60,7 +60,7 @@ namespace MvcApplication6.Models
     #endregion
 		
 		public PRODEDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["PRODEConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["PRODEConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -192,6 +192,8 @@ namespace MvcApplication6.Models
 		
 		private EntityRef<equipo> _equipo;
 		
+		private EntityRef<equipo> _equipo1;
+		
 		private EntityRef<fecha> _fecha;
 		
     #region Extensibility Method Definitions
@@ -224,6 +226,7 @@ namespace MvcApplication6.Models
 		{
 			this._usuario = default(EntityRef<usuario>);
 			this._equipo = default(EntityRef<equipo>);
+			this._equipo1 = default(EntityRef<equipo>);
 			this._fecha = default(EntityRef<fecha>);
 			OnCreated();
 		}
@@ -283,6 +286,10 @@ namespace MvcApplication6.Models
 			{
 				if ((this._equipovisita != value))
 				{
+					if (this._equipo1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnequipovisitaChanging(value);
 					this.SendPropertyChanging();
 					this._equipovisita = value;
@@ -474,7 +481,7 @@ namespace MvcApplication6.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_boleta", Storage="_equipo", ThisKey="equipolocal", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_boleta", Storage="_equipo", ThisKey="equipolocal", OtherKey="id", IsForeignKey=true)]
 		public equipo equipo
 		{
 			get
@@ -504,6 +511,40 @@ namespace MvcApplication6.Models
 						this._equipolocal = default(int);
 					}
 					this.SendPropertyChanged("equipo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_boleta1", Storage="_equipo1", ThisKey="equipovisita", OtherKey="id", IsForeignKey=true)]
+		public equipo equipo1
+		{
+			get
+			{
+				return this._equipo1.Entity;
+			}
+			set
+			{
+				equipo previousValue = this._equipo1.Entity;
+				if (((previousValue != value) 
+							|| (this._equipo1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._equipo1.Entity = null;
+						previousValue.boletas1.Remove(this);
+					}
+					this._equipo1.Entity = value;
+					if ((value != null))
+					{
+						value.boletas1.Add(this);
+						this._equipovisita = value.id;
+					}
+					else
+					{
+						this._equipovisita = default(int);
+					}
+					this.SendPropertyChanged("equipo1");
 				}
 			}
 		}
@@ -930,7 +971,11 @@ namespace MvcApplication6.Models
 		
 		private EntitySet<boleta> _boletas;
 		
+		private EntitySet<boleta> _boletas1;
+		
 		private EntitySet<partido> _partidos;
+		
+		private EntitySet<partido> _partidos1;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -945,7 +990,9 @@ namespace MvcApplication6.Models
 		public equipo()
 		{
 			this._boletas = new EntitySet<boleta>(new Action<boleta>(this.attach_boletas), new Action<boleta>(this.detach_boletas));
+			this._boletas1 = new EntitySet<boleta>(new Action<boleta>(this.attach_boletas1), new Action<boleta>(this.detach_boletas1));
 			this._partidos = new EntitySet<partido>(new Action<partido>(this.attach_partidos), new Action<partido>(this.detach_partidos));
+			this._partidos1 = new EntitySet<partido>(new Action<partido>(this.attach_partidos1), new Action<partido>(this.detach_partidos1));
 			OnCreated();
 		}
 		
@@ -1002,6 +1049,19 @@ namespace MvcApplication6.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_boleta1", Storage="_boletas1", ThisKey="id", OtherKey="equipovisita")]
+		public EntitySet<boleta> boletas1
+		{
+			get
+			{
+				return this._boletas1;
+			}
+			set
+			{
+				this._boletas1.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_partido", Storage="_partidos", ThisKey="id", OtherKey="equipolocal")]
 		public EntitySet<partido> partidos
 		{
@@ -1012,6 +1072,19 @@ namespace MvcApplication6.Models
 			set
 			{
 				this._partidos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_partido1", Storage="_partidos1", ThisKey="id", OtherKey="equipovisita")]
+		public EntitySet<partido> partidos1
+		{
+			get
+			{
+				return this._partidos1;
+			}
+			set
+			{
+				this._partidos1.Assign(value);
 			}
 		}
 		
@@ -1047,6 +1120,18 @@ namespace MvcApplication6.Models
 			entity.equipo = null;
 		}
 		
+		private void attach_boletas1(boleta entity)
+		{
+			this.SendPropertyChanging();
+			entity.equipo1 = this;
+		}
+		
+		private void detach_boletas1(boleta entity)
+		{
+			this.SendPropertyChanging();
+			entity.equipo1 = null;
+		}
+		
 		private void attach_partidos(partido entity)
 		{
 			this.SendPropertyChanging();
@@ -1057,6 +1142,18 @@ namespace MvcApplication6.Models
 		{
 			this.SendPropertyChanging();
 			entity.equipo = null;
+		}
+		
+		private void attach_partidos1(partido entity)
+		{
+			this.SendPropertyChanging();
+			entity.equipo1 = this;
+		}
+		
+		private void detach_partidos1(partido entity)
+		{
+			this.SendPropertyChanging();
+			entity.equipo1 = null;
 		}
 	}
 	
@@ -1313,6 +1410,8 @@ namespace MvcApplication6.Models
 		
 		private EntityRef<equipo> _equipo;
 		
+		private EntityRef<equipo> _equipo1;
+		
 		private EntityRef<fecha> _fecha;
 		
     #region Extensibility Method Definitions
@@ -1338,6 +1437,7 @@ namespace MvcApplication6.Models
 		public partido()
 		{
 			this._equipo = default(EntityRef<equipo>);
+			this._equipo1 = default(EntityRef<equipo>);
 			this._fecha = default(EntityRef<fecha>);
 			OnCreated();
 		}
@@ -1397,6 +1497,10 @@ namespace MvcApplication6.Models
 			{
 				if ((this._equipovisita != value))
 				{
+					if (this._equipo1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnequipovisitaChanging(value);
 					this.SendPropertyChanging();
 					this._equipovisita = value;
@@ -1490,7 +1594,7 @@ namespace MvcApplication6.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_partido", Storage="_equipo", ThisKey="equipolocal", OtherKey="id", IsForeignKey=true, DeleteOnNull=true, DeleteRule="CASCADE")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_partido", Storage="_equipo", ThisKey="equipolocal", OtherKey="id", IsForeignKey=true)]
 		public equipo equipo
 		{
 			get
@@ -1520,6 +1624,40 @@ namespace MvcApplication6.Models
 						this._equipolocal = default(int);
 					}
 					this.SendPropertyChanged("equipo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="equipo_partido1", Storage="_equipo1", ThisKey="equipovisita", OtherKey="id", IsForeignKey=true)]
+		public equipo equipo1
+		{
+			get
+			{
+				return this._equipo1.Entity;
+			}
+			set
+			{
+				equipo previousValue = this._equipo1.Entity;
+				if (((previousValue != value) 
+							|| (this._equipo1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._equipo1.Entity = null;
+						previousValue.partidos1.Remove(this);
+					}
+					this._equipo1.Entity = value;
+					if ((value != null))
+					{
+						value.partidos1.Add(this);
+						this._equipovisita = value.id;
+					}
+					else
+					{
+						this._equipovisita = default(int);
+					}
+					this.SendPropertyChanged("equipo1");
 				}
 			}
 		}

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PRODE" Class="PRODEDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=LEVO;Initial Catalog=PRODE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PRODEConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=NOTE;Initial Catalog=PRODE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PRODEConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.boletas" Member="boletas">
     <Type Name="boleta">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -13,7 +13,8 @@
       <Column Name="puntostotales" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="editable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="usuario_boleta" Member="usuario" ThisKey="idusuario" OtherKey="id" Type="usuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
-      <Association Name="equipo_boleta" Member="equipo" ThisKey="equipolocal" OtherKey="id" Type="equipo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="equipo_boleta" Member="equipo" ThisKey="equipolocal" OtherKey="id" Type="equipo" IsForeignKey="true" />
+      <Association Name="equipo_boleta1" Member="equipo1" ThisKey="equipovisita" OtherKey="id" Type="equipo" IsForeignKey="true" />
       <Association Name="fecha_boleta" Member="fecha" ThisKey="idfechatorneo" OtherKey="id" Type="fecha" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
@@ -38,7 +39,9 @@
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Association Name="equipo_boleta" Member="boletas" ThisKey="id" OtherKey="equipolocal" Type="boleta" />
+      <Association Name="equipo_boleta1" Member="boletas1" ThisKey="id" OtherKey="equipovisita" Type="boleta" />
       <Association Name="equipo_partido" Member="partidos" ThisKey="id" OtherKey="equipolocal" Type="partido" />
+      <Association Name="equipo_partido1" Member="partidos1" ThisKey="id" OtherKey="equipovisita" Type="partido" />
     </Type>
   </Table>
   <Table Name="dbo.fechas" Member="fechas">
@@ -61,7 +64,8 @@
       <Column Name="golesvisita" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idfechatorneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="estadio" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Association Name="equipo_partido" Member="equipo" ThisKey="equipolocal" OtherKey="id" Type="equipo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="equipo_partido" Member="equipo" ThisKey="equipolocal" OtherKey="id" Type="equipo" IsForeignKey="true" />
+      <Association Name="equipo_partido1" Member="equipo1" ThisKey="equipovisita" OtherKey="id" Type="equipo" IsForeignKey="true" />
       <Association Name="fecha_partido" Member="fecha" ThisKey="idfechatorneo" OtherKey="id" Type="fecha" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>

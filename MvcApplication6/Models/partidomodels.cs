@@ -77,10 +77,8 @@ namespace MvcApplication6.Models
 
         /* -------------------------------------------------------------------------------------------  */
         public IEnumerable<partidomodels> listapartidos()
-        {     IEnumerable<partidomodels> lpartidos;
-        if (HttpRuntime.Cache["PARTIDOS"] == null)
         {
-            lpartidos =
+            IEnumerable<partidomodels> lpartidos =
             (from aux1fecha in db.fechas
              join aux2partido in db.partidos on aux1fecha.id equals aux2partido.idfechatorneo
              join aux3equipo in db.equipos on aux2partido.equipolocal equals aux3equipo.id
@@ -98,11 +96,6 @@ namespace MvcApplication6.Models
                  golesvisita = aux2partido.golesvisita,
                  estadio = aux2partido.estadio,
              });
-        }
-        else {
-            lpartidos = (IEnumerable<MvcApplication6.Models.partidomodels>)HttpRuntime.Cache.Get("PARTIDOS"); 
-        }
-
             return (lpartidos);
         }
         /* -------------------------------------------------------------------------------------------  */

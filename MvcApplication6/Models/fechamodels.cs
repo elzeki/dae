@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Caching;
 
 namespace MvcApplication6.Models
 {
@@ -22,29 +21,19 @@ namespace MvcApplication6.Models
         /*----------------------------------------------------------------------------------------------- */
         public IEnumerable<fechamodels> listafechas()
         {
-              IEnumerable<fechamodels> lfechas;
-              if (HttpRuntime.Cache["FECHAS"] == null)
-              {
-                  lfechas =
-                 (from aux1 in db.fechas
-                  join aux2 in db.torneos on aux1.idtorneo equals aux2.id
-                  orderby aux1.nombre
-                  select new fechamodels
-                  {
-                      id = aux1.id,
-                      idtorneo = aux1.idtorneo,
-                      hiddentorneo = aux2.nombre,
-                      nombre = aux1.nombre,
-                      fecha1 = aux1.fecha1,
+            IEnumerable<fechamodels> lfechas =
+            (from aux1 in db.fechas
+             join aux2 in db.torneos on aux1.idtorneo equals aux2.id
+             orderby aux1.nombre
+             select new fechamodels
+             {
+                 id             =aux1.id,
+                 idtorneo       =aux1.idtorneo,
+                 hiddentorneo   =aux2.nombre,
+                 nombre         =aux1.nombre,
+                 fecha1         =aux1.fecha1,
 
-                  });
-                  HttpRuntime.Cache.Add("FECHAS", lfechas, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
-        
-              }
-              else {
-                   lfechas = (IEnumerable<MvcApplication6.Models.fechamodels>)HttpRuntime.Cache.Get("FECHAS");
-              }
-
+             });
             return (lfechas);
         }
         /*----------------------------------------------------------------------------------------------- */

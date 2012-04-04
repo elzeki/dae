@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Caching;
 
 namespace MvcApplication6.Models
 {
@@ -90,30 +89,20 @@ namespace MvcApplication6.Models
         /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<usuariomodels> listausuarios()
         {
-            IEnumerable<usuariomodels> lusuarios;
-            if (HttpRuntime.Cache["USUARIOS"] == null)
-            {
-                    lusuarios =
-                    (from aux in db.usuarios
-                     select new usuariomodels
-                     {
-                         id = aux.id,
-                         nombre = aux.nombre,
-                         username = aux.username,
-                         password = aux.password,
-                         apellido = aux.apellido,
-                         fechanac = aux.fechanac,
-                         email = aux.email,
+            IEnumerable<usuariomodels> lusuario =
+            (from aux in db.usuarios
+             select new usuariomodels
+             {
+                 id       = aux.id,
+                 nombre   = aux.nombre,
+                 username = aux.username,
+                 password = aux.password,
+                 apellido = aux.apellido,
+                 fechanac =aux.fechanac,
+                 email    =aux.email,
 
-                     });
-                HttpRuntime.Cache.Add("USUARIOS", lusuarios, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.Normal, null);
-        
-            }
-
-            else {
-                lusuarios = (IEnumerable<MvcApplication6.Models.usuariomodels>)HttpRuntime.Cache.Get("USUARIOS");
-            }
-            return (lusuarios);
+             });
+            return (lusuario);
         }
         /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<usuariomodels> verusuario(int id)

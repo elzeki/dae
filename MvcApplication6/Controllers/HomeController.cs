@@ -4,20 +4,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcApplication6.Models;
-using System.Web.Caching;
 
 namespace MvcApplication6.Controllers
 {
     public class HomeController : Controller
     {
         private PRODEDataContext db = new PRODEDataContext();
-
-
-       
+        
         public ActionResult Index()
-        {
-
-            
+        {   
              Session["id"]=5;
              Session["username"]="zeki";
              Session["rol"] = "usuario";           
