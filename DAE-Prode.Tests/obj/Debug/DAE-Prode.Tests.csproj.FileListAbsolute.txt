@@ -1,0 +1,11 @@
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\DAE-Prode.Tests.dll.config
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\DAE-Prode.Tests.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\DAE-Prode.Tests.pdb
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\DAE-Prode.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\nunit.framework.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\nunit.mocks.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\DAE-Prode.pdb
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\bin\Debug\nunit.framework.xml
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\obj\Debug\DAE-Prode.Tests.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\obj\Debug\DAE-Prode.Tests.pdb

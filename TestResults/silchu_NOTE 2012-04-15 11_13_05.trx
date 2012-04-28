@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="554c5c5c-7fe2-45a1-8796-0f63e039ec78" name="silchu@NOTE 2012-04-15 11:13:05" runUser="NOTE\silchu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="bebc1f6e-91f6-444e-b207-22051d2dfc1f">
+    <Deployment runDeploymentRoot="silchu_NOTE 2012-04-15 11_13_05">
+      <DeploymentItem filename="c:\users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-15T11:13:05.2631169-03:00" queuing="2012-04-15T11:13:06.7812037-03:00" start="2012-04-15T11:13:06.9052108-03:00" finish="2012-04-15T11:13:08.3922959-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="About" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="a29a10fa-36e9-0647-2204-92b9feb66aaa">
+      <Execution id="044baa16-b447-4a5c-a89e-9ef6b88cf5fa" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="4489632b-6ac8-62dc-15c0-186db1c528e5">
+      <Execution id="d1fe7ad2-3cb5-4da5-85b7-1735febb1f1d" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4489632b-6ac8-62dc-15c0-186db1c528e5" executionId="d1fe7ad2-3cb5-4da5-85b7-1735febb1f1d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a29a10fa-36e9-0647-2204-92b9feb66aaa" executionId="044baa16-b447-4a5c-a89e-9ef6b88cf5fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="d1fe7ad2-3cb5-4da5-85b7-1735febb1f1d" testId="4489632b-6ac8-62dc-15c0-186db1c528e5" testName="Index" computerName="NOTE" duration="00:00:00.2828205" startTime="2012-04-15T11:13:06.9892156-03:00" endTime="2012-04-15T11:13:08.1582825-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d1fe7ad2-3cb5-4da5-85b7-1735febb1f1d">
+    </UnitTestResult>
+    <UnitTestResult executionId="044baa16-b447-4a5c-a89e-9ef6b88cf5fa" testId="a29a10fa-36e9-0647-2204-92b9feb66aaa" testName="About" computerName="NOTE" duration="00:00:00.0004234" startTime="2012-04-15T11:13:08.1722833-03:00" endTime="2012-04-15T11:13:08.1852840-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="044baa16-b447-4a5c-a89e-9ef6b88cf5fa">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -1,0 +1,77 @@
+﻿@model DAE_Prode.Models.usuariomodels
+@{
+    ViewBag.Title = "Agregar Usuario";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<h1>Agregar Nuevo Usuario</h1>
+<br/>
+@using (Html.BeginForm()) {
+<div>
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.username)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.username)
+            @Html.ValidationMessageFor(m => m.username)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.password)
+        </div>
+        <div class="editor-field">
+           @Html.TextBoxFor(m => m.password)
+           @Html.ValidationMessageFor(m => m.password)
+        </div>   
+        <div class="editor-label">
+            @Html.LabelFor(m => m.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.nombre)
+            @Html.ValidationMessageFor(m => m.nombre)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(m => m.apellido)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.apellido)
+            @Html.ValidationMessageFor(m => m.apellido)
+        </div>   
+        <div class="editor-label">
+            @Html.LabelFor(m => m.fechanac)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.fechanac, new { id = "datepicker", Readonly = "readonly"})
+            @Html.ValidationMessageFor(m => m.fechanac)
+        </div>   
+        <div class="editor-label">
+            @Html.LabelFor(m => m.email)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.email)
+            @Html.ValidationMessageFor(m => m.email)
+        </div>   
+        </fieldset>
+    <div class="submit">
+        <input type="submit" value="Agregar Usuario" />
+        <input type="reset" value="Reset" />
+    </div>
+</div>
+}
+@Html.ActionLink("Cancelar", "Index", "Usuarios")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#datepicker").datepicker(
+        {
+            dateFormat: 'dd-mm-yy',
+            changeYear: true,
+            yearRange: "1930:2015",
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre']
+        });
+    });
+</script>

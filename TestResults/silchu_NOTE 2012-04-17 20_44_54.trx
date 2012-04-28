@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="490b3749-c48e-4c14-acdd-c545aa0f8308" name="silchu@NOTE 2012-04-17 20:44:54" runUser="NOTE\silchu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="9f8cf484-8b27-4610-aca2-cd42a1c0512d">
+    <Deployment userDeploymentRoot="C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="silchu_NOTE 2012-04-17 20_44_54">
+      <DeploymentItem filename="C:\Program Files\NUnit 2.5.10\bin\net-2.0\framework\nunit.framework.dll" />
+      <DeploymentItem filename="C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll" />
+      <DeploymentItem filename="C:\Program Files\NUnit 2.5.10\bin\net-2.0\framework\nunit.mocks.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-17T20:44:54.2272913-03:00" queuing="2012-04-17T20:44:54.7933237-03:00" start="2012-04-17T20:44:54.9393321-03:00" finish="2012-04-17T20:44:55.5323660-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="3" executed="3" error="3" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="75f16c1a-e515-a0ad-8404-da66183db6e6">
+      <Execution id="04e4199f-ecb2-4827-9d25-462b4dad37c7" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.UnitTest1, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="4489632b-6ac8-62dc-15c0-186db1c528e5">
+      <Execution id="4b003eac-6edd-4b57-a013-93ea6b3d2870" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="Reglamento" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad">
+      <Execution id="6a569619-313d-4b3d-a4d9-59dfedecc12d" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Reglamento" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4489632b-6ac8-62dc-15c0-186db1c528e5" executionId="4b003eac-6edd-4b57-a013-93ea6b3d2870" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" executionId="6a569619-313d-4b3d-a4d9-59dfedecc12d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75f16c1a-e515-a0ad-8404-da66183db6e6" executionId="04e4199f-ecb2-4827-9d25-462b4dad37c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4b003eac-6edd-4b57-a013-93ea6b3d2870" testId="4489632b-6ac8-62dc-15c0-186db1c528e5" testName="Index" computerName="NOTE" startTime="2012-04-17T20:44:54.9603333-03:00" endTime="2012-04-17T20:44:55.2163479-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4b003eac-6edd-4b57-a013-93ea6b3d2870">
+      <Output>
+        <ErrorInfo>
+          <Message>Unit Test Adapter threw exception: 
+The type initializer for 'Microsoft.VisualStudio.TestTools.Diagnostics.EqtTrace' threw an exception.
+Configuration system failed to initialize
+Unrecognized configuration section sessionState. (C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults\silchu_NOTE 2012-04-17 20_44_54\Out\DAE-Prode.Tests.DLL.config line 20).</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6a569619-313d-4b3d-a4d9-59dfedecc12d" testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" testName="Reglamento" computerName="NOTE" startTime="2012-04-17T20:44:55.2183480-03:00" endTime="2012-04-17T20:44:55.3643564-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a569619-313d-4b3d-a4d9-59dfedecc12d">
+      <Output>
+        <ErrorInfo>
+          <Message>Unit Test Adapter threw exception: 
+The type initializer for 'Microsoft.VisualStudio.TestTools.Diagnostics.EqtTrace' threw an exception.
+Configuration system failed to initialize
+Unrecognized configuration section sessionState. (C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults\silchu_NOTE 2012-04-17 20_44_54\Out\DAE-Prode.Tests.DLL.config line 20).</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="04e4199f-ecb2-4827-9d25-462b4dad37c7" testId="75f16c1a-e515-a0ad-8404-da66183db6e6" testName="TestMethod1" computerName="NOTE" startTime="2012-04-17T20:44:55.3663565-03:00" endTime="2012-04-17T20:44:55.5163651-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04e4199f-ecb2-4827-9d25-462b4dad37c7">
+      <Output>
+        <ErrorInfo>
+          <Message>Unit Test Adapter threw exception: 
+The type initializer for 'Microsoft.VisualStudio.TestTools.Diagnostics.EqtTrace' threw an exception.
+Configuration system failed to initialize
+Unrecognized configuration section sessionState. (C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults\silchu_NOTE 2012-04-17 20_44_54\Out\DAE-Prode.Tests.DLL.config line 20).</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

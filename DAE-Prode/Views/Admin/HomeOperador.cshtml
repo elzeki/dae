@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Home Operador";
+}
+
+<h1>Bienvenidos</h1>
+<table>
+	<tr>
+		<th><h5>CARGAR MENU FECHAS POR TORNEO</h5></th>
+        <th><h5>CARGAR TABLA GENERAL</h5></th>
+        <th><h5>CARGAR RESULTADOS</h5></th>
+		<th><h5>CARGAR TOP TEN</h5></th>
+		<th><h5>CARGAR TOP FIVE</h5></th>
+        <th><h5>CARGAR PUNTOS EN USUARIOS</h5></th>
+	</tr>
+	<tr>
+         <td>
+         <a href="@Url.Action("Seleccionartorneo", "Operators", new { accion = "Cargartablageneral" })">
+            <img src="../../Content/images/admin/partidos.png", 
+                title = "Ir a cargar TablaGeneral" alt="Ir a cargar TablaGeneral" />
+        </a>
+		</td>
+         <td>
+         <a href="@Url.Action("Seleccionartorneo", "Operators", new { accion = "Cargartablageneral" })">
+            <img src="../../Content/images/admin/partidos.png", 
+                title = "Ir a cargar TablaGeneral" alt="Ir a cargar TablaGeneral" />
+        </a>
+		</td>
+        <td>
+         <a href="@Url.Action("Seleccionarfechaportorneo", "Operators", new { accion = "Cargarresultados" })">
+            <img src="../../Content/images/admin/partidos.png", 
+                title = "Ir a cargar Resultados" alt="Ir a cargar Resultados" />
+        </a>
+		</td>
+		
+        <td>
+         <a href="@Url.Action("Seleccionartorneo", "Operators", new { accion = "Cargartopten" })">
+            <img src="../../Content/images/admin/torneos.png", 
+                 title = "Ir a cargar Top Ten" alt="Ir a cargar Top Ten" class="imageHome"/>
+        </a>			
+		</td>
+		
+        <td>
+         <a href="@Url.Action("Seleccionarfechaportorneo", "Operators", new { accion = "Cargartopfive" })">
+            <img src="../../Content/images/admin/torneos.png", 
+                 title = "Ir a cargar Top five" alt="Ir a cargar Top Five" class="imageHome"/>
+        </a>			
+		</td>
+         
+         <td>
+         <a href="@Url.Action("Seleccionarfechaportorneo", "Operators", new { accion = "Meterpuntosboleta" })">
+            <img src="../../Content/images/admin/partidos.png", 
+                title = "Ir a cargar Resultados" alt="Ir a cargar Resultados" />
+        </a>
+		</td>   	
+	</tr>
+</table>
+<a href="@Url.Action("Index", "Home")">
+    <img src="../../Content/images/admin/home.png", 
+         title = "Ir al Sitio Web" alt="Ir al Sitio Web" class="imageHome"/>
+</a>

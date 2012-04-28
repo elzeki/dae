@@ -1,0 +1,7 @@
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.pdb
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\EntityFramework.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\EntityFramework.xml
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\obj\Debug\DAE-Prode.dll
+C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\obj\Debug\DAE-Prode.pdb

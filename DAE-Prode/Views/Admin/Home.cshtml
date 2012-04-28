@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    ViewBag.Title = "Home Admin";
+}
+
+<h1>Bienvenidos</h1>
+<table>
+	<tr>
+		<th><h5>TORNEOS</h5></th>
+		<th><h5>FECHAS</h5></th>
+		<th><h5>PARTIDOS</h5></th>
+        <th><h5>EQUIPOS</h5></th>
+        <th><h5>USUARIOS</h5></th>
+	</tr>
+	<tr>
+		<td>
+        <a href="@Url.Action("index", "Torneos")">
+            <img src="../../Content/images/admin/torneos.png", 
+                title = "Ir a la seccion de Torneos" alt="Ir a la seccion de Torneos" />
+        </a>
+		</td>
+		<td>
+        <a href="@Url.Action("index", "Fechas")">
+            <img src="../../Content/images/admin/fechas.png", 
+                 title = "Ir a la seccion de Fechas" alt="Ir a la seccion de Fechas" class="imageHome"/>
+        </a>			
+		</td>
+		<td>
+        <a href="@Url.Action("index", "Partidos")">
+            <img src="../../Content/images/admin/partidos.png", 
+                 title = "Ir a la seccion de Partidos" alt="Ir a la seccion de Partido" class="imageHome"/>
+        </a>			
+		</td>
+        <td>
+        <a href="@Url.Action("index", "Equipos")">
+            <img src="../../Content/images/admin/equipos.png", 
+                 title = "Ir a la seccion de Equipos" alt="Ir a la seccion de Equipos" class="imageHome"/>
+        </a>			
+		</td>
+        <td>
+        <a href="@Url.Action("index", "Usuarios")">
+            <img src="../../Content/images/admin/usuarios.png", 
+                 title = "Ir a la seccion de Usuarios" alt="Ir a la seccion de Usuarios" class="imageHome"/>
+        </a>			
+		</td>        	
+	</tr>
+</table>
+<a href="@Url.Action("Index", "Home")">
+    <img src="../../Content/images/admin/home.png", 
+         title = "Ir al Sitio Web" alt="Ir al Sitio Web" class="imageHome"/>
+</a>

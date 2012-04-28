@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0366cc02-c3c2-467a-bb07-77c202931124" name="silchu@NOTE 2012-04-15 14:42:14" runUser="NOTE\silchu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="762ae3c1-14c6-4e2b-b960-9a14e3ff028c">
+    <Deployment userDeploymentRoot="c:\users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="silchu_NOTE 2012-04-15 14_42_14">
+      <DeploymentItem filename="c:\users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-15T14:42:14.5388944-03:00" queuing="2012-04-15T14:42:16.8520267-03:00" start="2012-04-15T14:42:17.3520553-03:00" finish="2012-04-15T14:43:17.8715168-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="2" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="1" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="NOTE" outcome="Error" timestamp="2012-04-15T14:43:17.8605162-03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Reglamento" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad">
+      <Execution id="4c9ba72b-353c-479d-ac41-1b9b832c24fd" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Reglamento" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="4489632b-6ac8-62dc-15c0-186db1c528e5">
+      <Execution id="76b581f6-7627-4562-97eb-9cb8080826c3" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" executionId="4c9ba72b-353c-479d-ac41-1b9b832c24fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4489632b-6ac8-62dc-15c0-186db1c528e5" executionId="76b581f6-7627-4562-97eb-9cb8080826c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="4c9ba72b-353c-479d-ac41-1b9b832c24fd" testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" testName="Reglamento" computerName="NOTE" duration="00:01:00.3174500" startTime="2012-04-15T14:42:17.5500666-03:00" endTime="2012-04-15T14:43:17.8675166-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4c9ba72b-353c-479d-ac41-1b9b832c24fd">
+    </UnitTestResult>
+    <UnitTestResult executionId="76b581f6-7627-4562-97eb-9cb8080826c3" testId="4489632b-6ac8-62dc-15c0-186db1c528e5" testName="Index" computerName="NOTE" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="76b581f6-7627-4562-97eb-9cb8080826c3">
+    </UnitTestResult>
+  </Results>
+</TestRun>

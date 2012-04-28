@@ -1,0 +1,28 @@
+﻿@model DAE_Prode.Models.equipomodels
+@{
+    ViewBag.Title = "Agregar Equipo";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<h1>Agregar Nuevo Equipo</h1>
+<br/>
+@using (Html.BeginForm()) {
+<div>
+    <fieldset>        
+        <div class="editor-label">
+            @Html.LabelFor(m => m.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(m => m.nombre)
+            @Html.ValidationMessageFor(m => m.nombre)
+        </div>            
+        </fieldset>
+    <div class="submit">
+        <input type="submit" value="Agregar Equipo" />
+        <input type="reset" value="Reset" />
+    </div>
+</div>
+}
+@Html.ActionLink("Cancelar", "Index", "Equipos")
