@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<div><h3>Partidos</h3></div>
+Agregar Partido
+<a href="@Url.Action("Agregar", "Partidos")"><img src="../../Content/images/img/add.png" 
+                                                 alt="Agregar" class="imageHome" title="Agregar Nuevo Partido" /></a>
+<div>
+<table cellpadding="0" cellspacing="0">
+	<tr> <th>Id</th> <th>Equipo Local</th> <th>Equipo Visitante</th> <th>Goles Local</th> <th>Goles Visitante</th>
+         <th>fecha</th><th>Estadio</th><th>Opciones</th> </tr>	
+	@foreach (var aux in Model) {
+        <tr>
+            <td>@aux.id</td>
+            <td>@Html.ActionLink( Convert.ToString((string)@aux.hiddenlocal), "ver", "Equipos", new{id=@aux.equipolocal},  null)</td>
+            <td>@Html.ActionLink( Convert.ToString((string)@aux.hiddenvisita), "ver", "Equipos", new{id=@aux.equipovisita}, null)</td>
+            <td>@aux.goleslocal</td>
+            <td>@aux.golesvisita</td>
+            <td>@Html.ActionLink( Convert.ToString((string)@aux.hiddenfecha), "ver", "Fechas", new{id=@aux.idfechatorneo},null)</td> 
+			<td>@aux.estadio</td>
+            <td align="center">
+            <a href="@Url.Action("Ver", "Partidos", new { id = @aux.id })" title="Ver Partido">
+                <img src="../../Content/images/img/view.png" alt="Ver Partido" class="imageHome" /></a>
+            <a href="@Url.Action("Editar", "Partidos", new { idp = @aux.id })" title="Editar Partido">
+                <img src="../../Content/images/img/edit.png" alt="Editar Partido" class="imageHome" /></a>
+            <a href="@Url.Action("Eliminar", "Partidos", new { id = @aux.id })" class="delete" title="Eliminar Partido">
+                <img src="../../Content/images/img/delete.png" alt="Eliminar Partido" class="imageHome" /></a>
+          </td>
+		</tr>
+    }
+</table>
+</div>
+<br/><br/>
+<a href="@Url.Action("Home", "Admin")"> Volver al ADMINISTRADOR </a>
+
+<script type="text/javascript">
+    $('.delete').click(function () {
+        if (confirm('Está seguro que desea eliminar este partido?')) {
+            var $link = $(this);
+            $.ajax({
+                url: this.href,
+                type: 'DELETE',
+                success: function (result) {
+                    $link.parent().parent().remove();
+                }
+            });
+        }
+        return false;
+    });
+</script>

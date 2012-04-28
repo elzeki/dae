@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PRODE" Class="PRODEDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LEVO;Initial Catalog=PRODE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PRODEConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.boletas" Member="boletas">
+    <Type Name="boleta">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="equipolocal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="equipovisita" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="goleslocal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="golesvisita" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idfechatorneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estadio" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puntostotales" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="editable" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_boleta" Member="usuario" ThisKey="idusuario" OtherKey="id" Type="usuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="equipo_boleta" Member="equipo" ThisKey="equipolocal" OtherKey="id" Type="equipo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="fecha_boleta" Member="fecha" ThisKey="idfechatorneo" OtherKey="id" Type="fecha" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.usuarios" Member="usuarios">
+    <Type Name="usuario">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fechanac" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="idrol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_boleta" Member="boletas" ThisKey="id" OtherKey="idusuario" Type="boleta" />
+      <Association Name="usuario_topfive" Member="topfives" ThisKey="id" OtherKey="idusuario" Type="topfive" />
+      <Association Name="usuario_topten" Member="toptens" ThisKey="id" OtherKey="idusuario" Type="topten" />
+      <Association Name="role_usuario" Member="role" ThisKey="idrol" OtherKey="id" Type="role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.equipos" Member="equipos">
+    <Type Name="equipo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="equipo_boleta" Member="boletas" ThisKey="id" OtherKey="equipolocal" Type="boleta" />
+      <Association Name="equipo_partido" Member="partidos" ThisKey="id" OtherKey="equipolocal" Type="partido" />
+      <Association Name="equipo_tablageneral" Member="tablagenerals" ThisKey="id" OtherKey="idequipo" Type="tablageneral" />
+    </Type>
+  </Table>
+  <Table Name="dbo.fechas" Member="fechas">
+    <Type Name="fecha">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idtorneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecha1" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="fecha_boleta" Member="boletas" ThisKey="id" OtherKey="idfechatorneo" Type="boleta" />
+      <Association Name="fecha_partido" Member="partidos" ThisKey="id" OtherKey="idfechatorneo" Type="partido" />
+      <Association Name="torneo_fecha" Member="torneo" ThisKey="idtorneo" OtherKey="id" Type="torneo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.partidos" Member="partidos">
+    <Type Name="partido">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="equipolocal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="equipovisita" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="goleslocal" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="golesvisita" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idfechatorneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="jugado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estadio" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="equipo_partido" Member="equipo" ThisKey="equipolocal" OtherKey="id" Type="equipo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="fecha_partido" Member="fecha" ThisKey="idfechatorneo" OtherKey="id" Type="fecha" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.roles" Member="roles">
+    <Type Name="role">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="role_usuario" Member="usuarios" ThisKey="id" OtherKey="idrol" Type="usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tablageneral" Member="tablagenerals">
+    <Type Name="tablageneral">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idequipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puntos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="equipo_tablageneral" Member="equipo" ThisKey="idequipo" OtherKey="id" Type="equipo" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.topfives" Member="topfives">
+    <Type Name="topfive">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puntosporfecha" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_topfive" Member="usuario" ThisKey="idusuario" OtherKey="id" Type="usuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.topten" Member="toptens">
+    <Type Name="topten">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idusuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="puntosportorneo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="usuario_topten" Member="usuario" ThisKey="idusuario" OtherKey="id" Type="usuario" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.torneos" Member="torneos">
+    <Type Name="torneo">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="torneo_fecha" Member="fechas" ThisKey="id" OtherKey="idtorneo" Type="fecha" />
+    </Type>
+  </Table>
+</Database>

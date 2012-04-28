@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Ver Fecha";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<div class="info-view">
+<h2>Datos de la Fecha</h2>
+<div id = "izqview">
+	<div id = "imagenvie">
+	    <div id = "view_img">
+            <img src="../../Content/images/admin/fechas.png" alt="Torneo" />
+        </div>
+	</div>
+	<div id = "mostrarI">
+        <p><strong>ID: </strong>@ViewBag.id</p>
+        <p><strong>Torneo: </strong>@ViewBag.idtorneo</p>
+        <p><strong>Nombre: </strong>@ViewBag.nombre</p>
+        <p><strong>Fecha: </strong>@ViewBag.fecha</p>
+	</div>
+</div>
+</div>
+<br/>
+<br/> <br/>
+<p>@Html.ActionLink("Volver", "Index", "Fechas")</p>

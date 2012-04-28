@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+<div><h3>Equipos</h3></div>
+Agregar Equipo
+<a href="@Url.Action("Agregar", "Equipos")"><img src="../../Content/images/img/add.png" 
+                                                 alt="Agregar" class="imageHome" title="Agregar Nuevo Equipo" /></a>
+<div>
+<table cellpadding="0" cellspacing="0">
+	<tr> <th>Id</th> <th>Nombre</th> <th>Opciones</th> </tr>	
+	@foreach (var aux in Model)
+    {	<tr>
+		  <td>@aux.id</td> 
+		  <td>@aux.nombre</td>
+          <td align="center">
+          <a href="@Url.Action("Ver", "Equipos", new { id = @aux.id })" title="Ver Equipo">
+          <img src="../../Content/images/img/view.png" alt="Ver Equipo" class="imageHome" /></a>
+          <a href="@Url.Action("Editar", "Equipos", new { id = @aux.id })" title="Editar Equipo">
+                <img src="../../Content/images/img/edit.png" alt="Editar Equipo" class="imageHome" /></a>
+          <a href="@Url.Action("Eliminar", "Equipos", new { id = @aux.id })" class="delete" title="Eliminar Equipo">
+                <img src="../../Content/images/img/delete.png" alt="Eliminar Equipo" class="imageHome" /></a>
+          </td>
+		</tr>
+    }
+</table>
+</div>
+<br/><br/>
+
+<a href="@Url.Action("Home", "Admin")"> Volver al ADMINISTRADOR </a>
+
+<script type="text/javascript">
+    $('.delete').click(function () {
+        if (confirm('Está seguro que desea eliminar este equipo?')) {
+            var $link = $(this);
+            $.ajax({
+                url: this.href,
+                type: 'DELETE',
+                success: function (result) {
+                    $link.parent().parent().remove();
+                }
+            });
+        }
+        return false;
+    });
+</script>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="003170ef-2d34-4cb3-831d-90aeabc39df3" name="silchu@NOTE 2012-04-15 14:04:34" runUser="NOTE\silchu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="e1cd94c2-46b9-4222-b25a-8d47251038dd">
+    <Deployment runDeploymentRoot="silchu_NOTE 2012-04-15 14_04_34">
+      <DeploymentItem filename="c:\users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-15T14:04:34.5086281-03:00" queuing="2012-04-15T14:04:36.4657400-03:00" start="2012-04-15T14:04:36.6167487-03:00" finish="2012-04-15T14:05:12.6128075-03:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="4" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="3" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="NOTE" outcome="Warning" timestamp="2012-04-15T14:05:12.5908063-03:00">
+        <Text>Failed to read from an IPC Port: Ha terminado la canalización.
+</Text>
+        <Exception>System.Runtime.Remoting.RemotingException: Failed to read from an IPC Port: Ha terminado la canalización.
+
+
+Server stack trace: 
+   at System.Runtime.Remoting.Channels.Ipc.IpcPort.Read(Byte[] data, Int32 offset, Int32 length)
+   at System.Runtime.Remoting.Channels.Ipc.PipeStream.Read(Byte[] buffer, Int32 offset, Int32 size)
+   at System.Runtime.Remoting.Channels.SocketHandler.ReadFromSocket(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.SocketHandler.Read(Byte[] buffer, Int32 offset, Int32 count)
+   at System.Runtime.Remoting.Channels.SocketHandler.ReadAndMatchFourBytes(Byte[] buffer)
+   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadAndMatchPreamble()
+   at System.Runtime.Remoting.Channels.Tcp.TcpSocketHandler.ReadVersionAndOperation(UInt16&amp; operation)
+   at System.Runtime.Remoting.Channels.Ipc.IpcClientHandler.ReadHeaders()
+   at System.Runtime.Remoting.Channels.Ipc.IpcClientTransportSink.ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, ITransportHeaders&amp; responseHeaders, Stream&amp; responseStream)
+   at System.Runtime.Remoting.Channels.BinaryClientFormatterSink.SyncProcessMessage(IMessage msg)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData&amp; msgData, Int32 type)
+   at Microsoft.VisualStudio.TestTools.Agent.IAgentObject.PauseTests()
+   at Microsoft.VisualStudio.TestTools.Agent.AgentProcessManager.Microsoft.VisualStudio.TestTools.Agent.IAgentObject.PauseTests()
+   at Microsoft.VisualStudio.TestTools.Agent.RemoteAgentObjectWrapper.&lt;PauseTests&gt;b__14(IAgentObject agent)
+   at Microsoft.VisualStudio.TestTools.Execution.RemoteObjectContainer`1.InvokeAsRemoteUser(Action`1 invoke)
+   at Microsoft.VisualStudio.TestTools.Agent.RemoteAgentObjectWrapper.PauseTests()
+   at Microsoft.VisualStudio.TestTools.Controller.ControllerExecution.RunStatePausing()</Exception>
+      </RunInfo>
+      <RunInfo computerName="NOTE" outcome="Error" timestamp="2012-04-15T14:05:12.5998068-03:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="About" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="0fb29272-df25-0702-5e1f-30eaaa2cfaca">
+      <Execution id="b542e812-1dac-42df-86ff-8153f07d1d87" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.Home2ControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="4489632b-6ac8-62dc-15c0-186db1c528e5">
+      <Execution id="ba046fb3-15e2-4653-812c-389feaff7544" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="0aa1b84c-924b-659b-e51f-7fbe5012ffdd">
+      <Execution id="07b1e8ae-4b72-4121-b128-d1b91109bd61" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.Home2ControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="Reglamento" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad">
+      <Execution id="64fb1e7f-61a4-460b-a792-a0c9a266339a" />
+      <TestMethod codeBase="c:/users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Reglamento" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4489632b-6ac8-62dc-15c0-186db1c528e5" executionId="ba046fb3-15e2-4653-812c-389feaff7544" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0aa1b84c-924b-659b-e51f-7fbe5012ffdd" executionId="07b1e8ae-4b72-4121-b128-d1b91109bd61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0fb29272-df25-0702-5e1f-30eaaa2cfaca" executionId="b542e812-1dac-42df-86ff-8153f07d1d87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" executionId="64fb1e7f-61a4-460b-a792-a0c9a266339a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="ba046fb3-15e2-4653-812c-389feaff7544" testId="4489632b-6ac8-62dc-15c0-186db1c528e5" testName="Index" computerName="NOTE" duration="00:00:35.9110540" startTime="2012-04-15T14:04:36.6917529-03:00" endTime="2012-04-15T14:05:12.6028069-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba046fb3-15e2-4653-812c-389feaff7544">
+    </UnitTestResult>
+    <UnitTestResult executionId="07b1e8ae-4b72-4121-b128-d1b91109bd61" testId="0aa1b84c-924b-659b-e51f-7fbe5012ffdd" testName="Index" computerName="NOTE" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="07b1e8ae-4b72-4121-b128-d1b91109bd61">
+    </UnitTestResult>
+    <UnitTestResult executionId="b542e812-1dac-42df-86ff-8153f07d1d87" testId="0fb29272-df25-0702-5e1f-30eaaa2cfaca" testName="About" computerName="NOTE" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b542e812-1dac-42df-86ff-8153f07d1d87">
+    </UnitTestResult>
+    <UnitTestResult executionId="64fb1e7f-61a4-460b-a792-a0c9a266339a" testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" testName="Reglamento" computerName="NOTE" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="64fb1e7f-61a4-460b-a792-a0c9a266339a">
+    </UnitTestResult>
+  </Results>
+</TestRun>

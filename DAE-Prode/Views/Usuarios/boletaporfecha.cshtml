@@ -1,0 +1,50 @@
+﻿ @Html.Partial("_elegirfechaportorneo")
+
+
+ 
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        $("#submit").click(function () {
+            var objfecha = $("#selfecha");
+        })
+        var idtorneo = ($("#seltorneo").val());
+        llenarfecha(idtorneo);
+
+
+        /* ------------------------------------------------------------------------------ */
+        function llenarfecha() {
+            var idtorneo = ($("#seltorneo").val());
+            var url = '@(Url.Action("getboletasportorneo"))';
+            var params = 'idb=' + idtorneo;
+            $.getJSON(url, params,
+                function (data) {
+                    var objfecha = $("#selfecha");
+                    var objerror = $("#error");
+                    objfecha.text("");
+                    objerror.text("");
+                    if (data.length == 0) {
+                        objerror.text("No existen Fechas para el Torneo Seleccionado, por Favor elija otro torneo.");
+                        $("#submit").addClass("novisible");
+                        $("#submit").removeClass("visible");
+                    }
+                    else {
+                        $("#submit").removeClass("novisible")
+                        $("#submit").addClass("visible");
+                    }
+                    jQuery.each(data, function () {
+                        objfecha.append("<option " + "value=" + this.id + ">" + this.nombre + "</option>");
+
+                    })
+                })
+        }
+
+        $("#seltorneo").change(function () {
+            llenarfecha();
+        });
+
+        /* ------------------------------------------------------------------------------ */
+
+    });
+        
+  
+</script>

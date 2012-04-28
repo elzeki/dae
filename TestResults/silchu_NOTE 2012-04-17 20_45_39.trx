@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="11a1892d-6717-413e-a899-21eea463a9b3" name="silchu@NOTE 2012-04-17 20:45:39" runUser="NOTE\silchu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="9f8cf484-8b27-4610-aca2-cd42a1c0512d">
+    <Deployment userDeploymentRoot="C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="silchu_NOTE 2012-04-17 20_45_39">
+      <DeploymentItem filename="C:\Program Files\NUnit 2.5.10\bin\net-2.0\framework\nunit.framework.dll" />
+      <DeploymentItem filename="C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll" />
+      <DeploymentItem filename="C:\Program Files\NUnit 2.5.10\bin\net-2.0\framework\nunit.mocks.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-17T20:45:39.6468892-03:00" queuing="2012-04-17T20:45:40.1139159-03:00" start="2012-04-17T20:45:40.1289167-03:00" finish="2012-04-17T20:45:40.6469464-03:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="75f16c1a-e515-a0ad-8404-da66183db6e6">
+      <Execution id="12fa0c2a-cbf8-4698-92e3-26d8354ddb5a" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.UnitTest1, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="4489632b-6ac8-62dc-15c0-186db1c528e5">
+      <Execution id="972867e8-92fc-42aa-92cd-32d270c40e2d" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+    <UnitTest name="Reglamento" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad">
+      <Execution id="ea025151-347a-42fd-a993-feca215324eb" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.Controllers.HomeControllerTest, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Reglamento" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="4489632b-6ac8-62dc-15c0-186db1c528e5" executionId="972867e8-92fc-42aa-92cd-32d270c40e2d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" executionId="ea025151-347a-42fd-a993-feca215324eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75f16c1a-e515-a0ad-8404-da66183db6e6" executionId="12fa0c2a-cbf8-4698-92e3-26d8354ddb5a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="972867e8-92fc-42aa-92cd-32d270c40e2d" testId="4489632b-6ac8-62dc-15c0-186db1c528e5" testName="Index" computerName="NOTE" duration="00:00:00.1013355" startTime="2012-04-17T20:45:40.1489179-03:00" endTime="2012-04-17T20:45:40.5799425-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="972867e8-92fc-42aa-92cd-32d270c40e2d">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method DAE_Prode.Tests.Controllers.HomeControllerTest.Index threw exception: 
+System.NullReferenceException: Object reference not set to an instance of an object.</Message>
+          <StackTrace>    at DAE_Prode.Tests.Controllers.HomeControllerTest.Index() in C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode.Tests\Controllers\HomeControllerTest.cs:line 30
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ea025151-347a-42fd-a993-feca215324eb" testId="a6e09be3-e6ef-26d3-3f2a-1def75c4dcad" testName="Reglamento" computerName="NOTE" duration="00:00:00.0025355" startTime="2012-04-17T20:45:40.5819427-03:00" endTime="2012-04-17T20:45:40.5939433-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea025151-347a-42fd-a993-feca215324eb">
+    </UnitTestResult>
+    <UnitTestResult executionId="12fa0c2a-cbf8-4698-92e3-26d8354ddb5a" testId="75f16c1a-e515-a0ad-8404-da66183db6e6" testName="TestMethod1" computerName="NOTE" duration="00:00:00.0011938" startTime="2012-04-17T20:45:40.5959435-03:00" endTime="2012-04-17T20:45:40.6059440-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="12fa0c2a-cbf8-4698-92e3-26d8354ddb5a">
+    </UnitTestResult>
+  </Results>
+</TestRun>

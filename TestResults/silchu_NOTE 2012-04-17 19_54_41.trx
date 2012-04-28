@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ecc2c1f8-82bb-49d2-a4b9-ad762ffa7aed" name="silchu@NOTE 2012-04-17 19:54:41" runUser="NOTE\silchu" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="271d1682-c897-4e9e-b3cd-3f282bab3ecc">
+    <Deployment userDeploymentRoot="C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\TestResults" useDefaultDeploymentRoot="false" runDeploymentRoot="silchu_NOTE 2012-04-17 19_54_41">
+      <DeploymentItem filename="C:\Program Files\NUnit 2.5.10\bin\net-2.0\framework\nunit.framework.dll" />
+      <DeploymentItem filename="C:\Users\silchu\documents\visual studio 2010\Projects\DAE-Prode\DAE-Prode\bin\DAE-Prode.dll" />
+      <DeploymentItem filename="C:\Program Files\NUnit 2.5.10\bin\net-2.0\framework\nunit.mocks.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-04-17T19:54:41.8199915-03:00" queuing="2012-04-17T19:54:42.3280205-03:00" start="2012-04-17T19:54:42.4480274-03:00" finish="2012-04-17T19:54:43.3640798-03:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="TestMethod1" storage="c:\users\silchu\documents\visual studio 2010\projects\dae-prode\dae-prode.tests\bin\debug\dae-prode.tests.dll" id="75f16c1a-e515-a0ad-8404-da66183db6e6">
+      <Execution id="9358a762-aab1-480b-862c-673288dd77a3" />
+      <TestMethod codeBase="C:/Users/silchu/documents/visual studio 2010/Projects/DAE-Prode/DAE-Prode.Tests/bin/Debug/DAE-Prode.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="DAE_Prode.Tests.UnitTest1, DAE-Prode.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestMethod1" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="75f16c1a-e515-a0ad-8404-da66183db6e6" executionId="9358a762-aab1-480b-862c-673288dd77a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="9358a762-aab1-480b-862c-673288dd77a3" testId="75f16c1a-e515-a0ad-8404-da66183db6e6" testName="TestMethod1" computerName="NOTE" duration="00:00:00.0268740" startTime="2012-04-17T19:54:42.4710287-03:00" endTime="2012-04-17T19:54:43.2650741-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9358a762-aab1-480b-862c-673288dd77a3">
+    </UnitTestResult>
+  </Results>
+</TestRun>

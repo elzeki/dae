@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+<a href="@Url.Action("Seleccionartorneo", new { accion = "Verfechasportorneo" })"> Fer fechas de un torneo </a>
+@{var ltopfives = (IEnumerable<DAE_Prode.Models.topfivemodels>)ViewData["ltopfives"];}
+@{var ltoptens = (IEnumerable<DAE_Prode.Models.toptenmodels>)ViewData["ltoptens"];}
+@{var ltablageneral = (IEnumerable<DAE_Prode.Models.tablageneralmodels>)ViewData["ltablageneral"];}
+<div >
+ <table class="tabla-general">
+        @{var ii=1;}
+        @foreach (var aux in ltablageneral)
+        { <tr><td>@ii</td><td>@aux.hiddennombreequipo</td><td>@aux.puntos</td> </tr>
+          ++ii;
+        }
+
+    </table>
+</div>
+<div class="home-topfives">
+    <table class="home-tabletop">
+        @{var i=1;}
+        @foreach (var aux in ltopfives)
+        { <tr><td>@i</td><td>@aux.hiddennombre @aux.hiddenapellido</td><td>@aux.puntosporfecha</td></tr>
+          ++i;
+        }
+
+    </table>
+    <div class="clear"></div>
+</div>
+<div class="home-toptens">
+    <table class="home-tabletop">
+        @{var ind=1;}
+        @foreach (var aux in ltoptens)
+        { <tr><td>@ind</td><td>@aux.hiddennombre @aux.hiddenapellido</td><td>@aux.puntosportorneo</td></tr>
+          ++ind;
+        }
+
+    </table>
+    <div class="clear"></div>
+</div>
