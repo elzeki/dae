@@ -3,7 +3,58 @@ The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
+.visible
+{ display: block;
+}
+.novisible
+{
+    display: none;
+}
 .clear { clear: both;}
+/*-------------------- formato general para las tablas-------------------------------------------------------*/
+.tabla-general
+{
+    border: 5px solid;
+ }
+.tabla-general th
+{
+    font-size: 16px;
+    background-color: #83aec0;
+    background-image: url("images/tabla/fondotabla.png");
+    background-repeat: repeat-x;
+	color: black;border-color:#660033;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	text-transform: uppercase;
+}
+.tabla-general td
+{
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    text-align:center;
+ }
+ 
+ .tabla-general td input
+{
+  text-align:center;
+  border: none;
+ }
+ 
+ 
+.tabla-general tr	
+{
+    background-image: url("images/tabla/fondotabla1.png");
+    padding: 5px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	text-align:center;
+}
+.tabla-general tr:hover td{	background-color:orange;} 
 /*  ==================================== HOME================================================================== */
 /*---index--------------------------- */
 .home-tabletop
@@ -24,8 +75,31 @@ to use a different color start by replacing all instances of
  height: 324px;
  margin-left:400px;
 }
+/*---ver fechas portorneo--------------------------- */
+.home-vfpt-tabla , .usarios-vbpt-tabla
+{ margin: 0 auto;
+  margin-bottom:10px;
+}
+
+.home-vfpt-tabla .resultado
+{ padding-left: 10px;
+  padding-right: 10px;
+}
 
 
+.home-vfpt-nombrefecha
+{text-align: center;
+ font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+ font-size: 20px;
+ text-transform:uppercase;
+ font-weight: bold;
+}
+.home-vfpt-nombretorneo , .usarios-vbpt-nombrefecha
+{  font-size: 2em;
+   font-weight: bold;
+   text-transform:uppercase;
+   text-align: center;
+}
 
 
 
@@ -217,14 +291,6 @@ textarea {
     min-height: 75px;
 }
 
-input[type="text"], 
-input[type="password"] {
-    border: 1px solid #ccc;
-    padding: 2px;
-    font-size: 1.2em;
-    color: #444;
-    width: 200px;
-}
 
 select {
     border: 1px solid #ccc;
@@ -233,10 +299,7 @@ select {
     color: #444;
 }
 
-input[type="submit"] {
-    font-size: 1.2em;
-    padding: 5px;
-}
+
 
 /* TABLE
 ----------------------------------------------------------*/

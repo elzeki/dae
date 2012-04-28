@@ -18,6 +18,20 @@ namespace DAE_Prode.Models
         [Display(Name = "Nombre")]
         public string nombre { get; set; }
         /*-----------------------------------------------------------------------------------------------------------*/
+        public string nombretorneo(int idt)
+        {
+            IEnumerable<torneomodels> T =
+               (from auxt in db.torneos
+                where auxt.id == idt
+                select new torneomodels
+                {
+                    id = auxt.id,
+                    nombre = auxt.nombre
+                }
+               );
+            return (T.First().nombre);
+        }
+        /*-----------------------------------------------------------------------------------------------------------*/
         public int Verpuntosportorneo(int id) //se obtiene a partir de una id y de un usuario
         {
             var total = 0;

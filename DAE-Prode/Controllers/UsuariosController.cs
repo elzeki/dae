@@ -83,7 +83,7 @@ namespace DAE_Prode.Controllers
                 if (lpartidos.Count() == 0)
                 {
                     TempData["ERROR"] = "No se definieron partidos para la fecha seleccionada, por favor seleccione otra fecha.";
-                    return RedirectToAction("boletaporfecha");
+                    return RedirectToAction("boletaporfecha", new{ accion="Cargarboleta"});
                 }               
                 foreach (var aux in lpartidos)
                 {
@@ -294,6 +294,7 @@ namespace DAE_Prode.Controllers
             return Json(lfechas, JsonRequestBehavior.AllowGet);
         }
         /* --------------------------------------------------------------------------------------  */
+        /* --------------------------------------------------------------------------------------  */
         public ActionResult boletaporfecha(String accion)
         {
             var ltorneos = new torneomodels().listatorneos();
@@ -311,7 +312,7 @@ namespace DAE_Prode.Controllers
         }
 
         /* --------------------------------------------------------------------------------------  */
-        public ActionResult boletasportorneo(string accion)
+        public ActionResult Seleccionartorneo(string accion)
         {
             var ltorneos = new torneomodels().listatorneos();
             ViewData["listatorneos"] = ltorneos;
@@ -320,13 +321,22 @@ namespace DAE_Prode.Controllers
         }
         /* --------------------------------------------------------------------------------------  */
         [HttpPost]
-        public ActionResult boletasportorneo(string accion, torneomodels T)
+        public ActionResult Seleccionartorneo(string accion, torneomodels T)
         {
             var ltorneos = new torneomodels().listatorneos();
             ViewData["listatorneos"] = ltorneos;
 
             return RedirectToAction(accion, new { idtorneo = T.id });
         }
+        /* --------------------------------------------------------------------------------------  */
+        public ActionResult Verboletasportorneo(int idtorneo)
+        {
+            IEnumerable<fechamodels> lfechas = new fechamodels().listafechasportorneo(idtorneo);
+            ViewBag.nombretorneo = new torneomodels().nombretorneo(idtorneo);
+            ViewData["lfechas"] = lfechas;
+            return View();
+        }
+        /* --------------------------------------------------------------------------------------  */
         /* --------------------------------------------------------------------------------------  */
     }
 

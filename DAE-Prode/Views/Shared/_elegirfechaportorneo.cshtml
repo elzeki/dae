@@ -1,24 +1,17 @@
-﻿@{
-    ViewBag.Title = "prueba";
-}
-<h2>prueba</h2>
-<h2 id="errores">@TempData["ERROR"]</h2>
+﻿<h2 id="errores">@TempData["ERROR"]</h2>
 <h2 id="mensajes">@TempData["MENSAJE"]</h2>
 
 @model DAE_Prode.Models.fechamodels
-@{
-    ViewBag.Title = "Seleccionartorneo";
-}
 
 @using (Html.BeginForm())
 {
 <fieldset>
-            <legend>Seleccionar Torneo</legend>
+            <legend>Seleccionar Torneo  y Fecha</legend>
 
             @{ var aux1 = (IEnumerable<DAE_Prode.Models.torneomodels>)ViewData["listatorneos"]; }
 
              <div class="editor-label">
-                @Html.LabelFor(m => m.id)
+                @Html.LabelFor(m => m.nombre)
             </div>
             @Html.DropDownListFor(
                         m => m.idtorneo,
@@ -36,9 +29,11 @@
                                
                             ) 
             @Html.ValidationMessageFor(m => m.id) 
-
+             <span><a href="@Url.Action("index", "home")">Home</a></span>
             <p>
-                <input id="submit" type="submit" value="Cargar Datos" />
+            
+             <input id="submit" type="submit" value="Cargar Datos" />
+               
             </p>
 </fieldset>
 }

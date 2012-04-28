@@ -5,12 +5,12 @@
 <h2>@TempData["ERROR"]</h2>
 <h2>@TempData["MENSAJE"]</h2>
 
-
+<a href="@Url.Action("Seleccionartorneo", new { accion = "Verfechasportorneo" })"> Fer fechas de un torneo </a>
 @{var ltopfives = (IEnumerable<DAE_Prode.Models.topfivemodels>)ViewData["ltopfives"];}
 @{var ltoptens = (IEnumerable<DAE_Prode.Models.toptenmodels>)ViewData["ltoptens"];}
 @{var ltablageneral = (IEnumerable<DAE_Prode.Models.tablageneralmodels>)ViewData["ltablageneral"];}
 <div >
- <table>
+ <table class="tabla-general">
         @{var ii=1;}
         @foreach (var aux in ltablageneral)
         { <tr><td>@ii</td><td>@aux.hiddennombreequipo</td><td>@aux.puntos</td> </tr>

@@ -63,7 +63,7 @@ namespace DAE_Prode.Models
     #endregion
 		
 		public PRODEDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["PRODEConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["PRODEConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

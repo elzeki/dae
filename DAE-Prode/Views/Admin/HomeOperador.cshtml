@@ -4,9 +4,10 @@
 }
 
 <h1>Bienvenidos</h1>
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
 <table>
 	<tr>
-		<th><h5>CARGAR MENU FECHAS POR TORNEO</h5></th>
         <th><h5>CARGAR TABLA GENERAL</h5></th>
         <th><h5>CARGAR RESULTADOS</h5></th>
 		<th><h5>CARGAR TOP TEN</h5></th>
@@ -19,13 +20,7 @@
             <img src="../../Content/images/admin/partidos.png", 
                 title = "Ir a cargar TablaGeneral" alt="Ir a cargar TablaGeneral" />
         </a>
-		</td>
-         <td>
-         <a href="@Url.Action("Seleccionartorneo", "Operators", new { accion = "Cargartablageneral" })">
-            <img src="../../Content/images/admin/partidos.png", 
-                title = "Ir a cargar TablaGeneral" alt="Ir a cargar TablaGeneral" />
-        </a>
-		</td>
+        </td>
         <td>
          <a href="@Url.Action("Seleccionarfechaportorneo", "Operators", new { accion = "Cargarresultados" })">
             <img src="../../Content/images/admin/partidos.png", 

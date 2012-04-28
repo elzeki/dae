@@ -1,0 +1,36 @@
+﻿<div class="home-vfpt-nombretorneo">TORNEO: @ViewBag.nombretorneo</div>
+<h2>@TempData["ERROR"]</h2>
+<h2>@TempData["MENSAJE"]</h2>
+
+@{var lfechas = (IEnumerable<DAE_Prode.Models.fechamodels>)ViewData["lfechas"];}
+
+@foreach (var auxf in lfechas)
+        {  
+           <div class="home-vfpt-nombrefecha">@auxf.nombre</div>
+           <table class="tabla-general home-vfpt-tabla">
+           <tr><th>Equipo Local</th><th></th><th></th><th>Equipo Visitante</th><th>Estadio</th></tr>
+            @{
+                var  idfecha = auxf.id;
+                IEnumerable<DAE_Prode.Models.partidomodels> lpartidos = new DAE_Prode.Models.partidomodels().listapartidosporfecha(idfecha);
+                foreach (var auxp in lpartidos)
+                {
+                    <tr> 
+                        <td>@auxp.hiddenlocal   </td> 
+                        @{if (auxp.jugado == 0)
+                          { 
+                              <td class="resultado">--</td>
+                              <td class="resultado">--</td>
+                          }
+                          else
+                          {
+                              <td class="resultado">@auxp.goleslocal    </td>
+                              <td class="resultado">@auxp.golesvisita   </td>
+                          }
+                        }
+                       <td>@auxp.hiddenvisita  </td>
+                        <td>@auxp.estadio       </td>
+                     </tr>
+                }
+            }  
+             </table>
+        }

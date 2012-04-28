@@ -1,8 +1,4 @@
 ﻿@model DAE_Prode.Models.torneomodels
-@{
-    ViewBag.Title = "Seleccionartorneo";
-}
-
 @using (Html.BeginForm())
 {
 <fieldset>
@@ -11,7 +7,7 @@
             @{ var aux1 = (IEnumerable<DAE_Prode.Models.torneomodels>)ViewData["listatorneos"]; }
 
              <div class="editor-label">
-                @Html.LabelFor(m => m.id)
+                @Html.LabelFor(m => m.nombre)
             </div>
             @Html.DropDownListFor(
                         m => m.id,
@@ -20,6 +16,7 @@
 
 
 
+            <span>	@Html.ActionLink("Home"	    , "Index"	, "Home")</span>
             <p>
                 <input type="submit" value="Seleccionar Torneo" />
             </p>

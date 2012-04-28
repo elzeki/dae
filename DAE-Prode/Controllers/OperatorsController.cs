@@ -185,16 +185,18 @@ namespace DAE_Prode.Controllers
             var pepe = lpartidos.Count();
             var puntoslocal = 0;
             var puntosvisitante = 0;
-            new tablageneralmodels().eliminartabla();
-
-            foreach (var auxp in lpartidos)
+            try
             {
-                if (auxp.goleslocal > auxp.golesvisita)
+                new tablageneralmodels().eliminartabla();
+
+                foreach (var auxp in lpartidos)
                 {
-                    puntoslocal = 2;
-                    puntosvisitante = 0;
-                }
-                else if (auxp.goleslocal < auxp.golesvisita)
+                    if (auxp.goleslocal > auxp.golesvisita)
+                    {
+                        puntoslocal = 2;
+                        puntosvisitante = 0;
+                    }
+                    else if (auxp.goleslocal < auxp.golesvisita)
                     {
                         puntoslocal = 0;
                         puntosvisitante = 2;
@@ -205,12 +207,16 @@ namespace DAE_Prode.Controllers
                         puntosvisitante = 1;
                     }
 
-                 Agregarpartido(auxp.equipolocal, puntoslocal);
-                 Agregarpartido(auxp.equipovisita, puntosvisitante);
+                    Agregarpartido(auxp.equipolocal, puntoslocal);
+                    Agregarpartido(auxp.equipovisita, puntosvisitante);
+                }
+                TempData["MENSAJE"] = "Se Cargo Correctamente la Tabla  General."; 
+            }
+            catch {
+                TempData["ERROR"] = "No se pudo Crear la tabla general,por favor intente nuevamente.";
             }
 
-
-            return View();
+            return RedirectToAction("HomeOperador", "Admin");
         }
 
         /* --------------------------------------------------------------------------------------  */

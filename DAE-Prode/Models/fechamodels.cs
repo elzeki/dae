@@ -20,6 +20,19 @@ namespace DAE_Prode.Models
         public string nombre        { get; set; }
         public string fecha1         { get; set; }
         /*----------------------------------------------------------------------------------------------- */
+        public String nombrefecha(int idf)
+        {
+            fechamodels nfecha =
+            (from auxf in db.fechas
+             where auxf.id == idf
+             select new fechamodels
+             {
+                 nombre = auxf.nombre,
+             }
+            ).First();
+            return (nfecha.nombre);
+        }
+        /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<fechamodels> listafechas()
         {
               IEnumerable<fechamodels> lfechas;

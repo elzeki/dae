@@ -7,10 +7,10 @@
 @{  var listaboletas     = (IEnumerable<DAE_Prode.Models.boletamodels>) ViewData["listaboletas"];
 }
 
-<table id="tabla1">
+<table class= "tabla-general">
 	<tr>
-	    <th>Id</th><th>Id usuario</th><th>Fecha</th><th>equipo local</th><th>Equipo visitante</th><th>Goles Local</th><th>Goles Visitante</th>
-        <th>Puntos Totales</th><th>Estadio</th><th>Editable</th>
+	    <th>Fecha</th><th>equipo local</th><th>Equipo visitante</th><th>Goles Local</th><th>Goles Visitante</th>
+        <th>Puntos Totales</th><th>Estadio</th><th>Actualizar</th>
 	</tr>	
 	
 	@foreach (var aux in listaboletas)
@@ -18,11 +18,12 @@
         <!--  ============================== begin form in tr  ====================================================== -->
         using (Html.BeginForm())
         { <tr>
-            <td>@Html.TextBoxFor(m => m.id              , new { Value = aux.id              , Readonly = "readonly" , Style = "width:60px;"  }) </td>
-            <td>@Html.TextBoxFor(m => m.idusuario       , new { Value = 1                   , Readonly = "readonly" , Style = "width:60px;"  }) </td>
-            <td>@Html.TextBoxFor(m => m.idfechatorneo   , new { Value = aux.idfechatorneo   , Readonly = "readonly" ,Style = "width:60px;"    }) </td>   
-            <td>@Html.TextBoxFor(m => m.equipolocal     , new { Value = aux.equipolocal     , Readonly = "readonly" , Style = "width:60px;"  }) </td>
-            <td>@Html.TextBoxFor(m => m.equipovisita    , new { Value = aux.equipovisita    , Readonly = "readonly" , Style = "width:60px;"  }) </td>            
+            <td  style = "display:none" >@Html.TextBoxFor(m => m.id       , new { Value = aux.id , Style = "width:60px;"  }) </td>
+            <td  style = "display:none">@Html.TextBoxFor(m => m.idusuario, new { Value = aux.idusuario , Style = "width:60px;" }) </td>
+            
+            <td>@Html.TextBoxFor(m => m.idfechatorneo,  new { Value = new DAE_Prode.Models.fechamodels().nombrefecha(aux.idfechatorneo), Readonly = "readonly", Style = "width:60px;" }) </td>   
+            <td>@Html.TextBoxFor(m => m.equipolocal,    new { Value = new DAE_Prode.Models.equipomodels().nombreequipo(aux.equipolocal), Readonly = "readonly" }) </td>
+            <td>@Html.TextBoxFor(m => m.equipovisita,   new { Value = new DAE_Prode.Models.equipomodels().nombreequipo(aux.equipovisita), Readonly = "readonly"}) </td>            
             @{if (aux.editable == 1)
               { <td>@Html.TextBoxFor(m => m.goleslocal, new { Value = aux.goleslocal, Style = "width:60px;" })  </td>        
                 <td>@Html.TextBoxFor(m => m.golesvisita, new { Value = aux.golesvisita, Style = "width:60px;" })</td>     
@@ -36,7 +37,7 @@
                
             <td>@Html.TextBoxFor(m => m.puntostotales, new { Value = aux.puntostotales, Readonly = "readonly", Style = "width:60px;" }) </td> 
             <td>@Html.TextBoxFor(m => m.estadio, new { Value = aux.estadio, Readonly = "readonly", Style = "width:300px;" }) </td>        
-            <td>@Html.TextBoxFor(m => m.editable, new { Value = aux.editable, Readonly = "readonly", Style = "width:60px;" }) </td>        
+            <td style = "display:none">@Html.TextBoxFor(m => m.editable, new { Value = aux.editable, Readonly = "readonly", Style = "width:60px;" }) </td>        
           
             @{if (aux.editable == 1) 
               {<td> <input type="submit" value="Guardar Resultado" /></td>
@@ -50,6 +51,4 @@
         <!--  ============================== end   form in tr  ====================================================== -->
     }
 </table>
-
-	@Html.ActionLink("Partidos", "Index")
 	@Html.ActionLink("Home"	    , "Index"	, "Home")

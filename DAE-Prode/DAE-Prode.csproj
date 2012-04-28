@@ -305,13 +305,16 @@
     <Content Include="Views\Torneos\Ver.cshtml" />
     <Content Include="Views\Usuarios\Agregar.cshtml" />
     <Content Include="Views\Usuarios\boletaporfecha.cshtml" />
-    <Content Include="Views\Usuarios\boletasportorneo.cshtml" />
     <Content Include="Views\Usuarios\Editar.cshtml" />
     <Content Include="Views\Usuarios\Editarboleta.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
     <Content Include="Views\Usuarios\Ver.cshtml" />
     <Content Include="Views\Usuarios\Verpuntosporfecha.cshtml" />
     <Content Include="Views\Usuarios\Verpuntosportorneo.cshtml" />
+    <Content Include="Views\Home\Seleccionartorneo.cshtml" />
+    <Content Include="Views\Home\Verfechasportorneo.cshtml" />
+    <Content Include="Views\Usuarios\Seleccionartorneo.cshtml" />
+    <Content Include="Views\Usuarios\Verboletasportorneo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

@@ -17,7 +17,21 @@ namespace DAE_Prode.Models
         public string nombre { get; set; }
 
 
-     /*-----------------------------------------------------------------------------------------------------------*/
+        /*-----------------------------------------------------------------------------------------------------------*/
+        public String nombreequipo(int ide)
+        {
+            equipomodels nequipo =
+            (from auxe in db.equipos
+             where auxe.id == ide
+             select new equipomodels
+             {
+                 nombre = auxe.nombre,
+             }
+            ).First();
+            return (nequipo.nombre);
+        }
+        /*-----------------------------------------------------------------------------------------------------------*/
+        /*-----------------------------------------------------------------------------------------------------------*/
         public IEnumerable<equipomodels> listaequipos()
         {
             IEnumerable<equipomodels> lequipos;
