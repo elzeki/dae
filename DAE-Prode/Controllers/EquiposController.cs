@@ -7,7 +7,7 @@ using DAE_Prode.Models;
 
 namespace DAE_Prode.Controllers
 {
-    [Login(rol = "admin")]
+    [Login(rol = "admin")] //ffdgfgdf
     public class EquiposController : Controller
     {
         private PRODEDataContext db = new PRODEDataContext();
